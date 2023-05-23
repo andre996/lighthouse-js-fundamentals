@@ -1,0 +1,49 @@
+ 
+class Oders{
+    List plates = [salad, hamburger]
+    chief
+    bill
+    
+}
+
+
+class plates{
+    ingredients,
+    cost
+}
+
+
+class Table{
+    order = [order1]
+    <List> tableAssgiment
+    <list> bills
+}
+
+
+
+class Weiter{
+    <List> tableAssgiment
+}
+
+class tableAssgiment{
+    date,
+    table,
+    waiter
+}
+
+class Bill{
+    Order
+
+    calculateBill(){
+        totalBill= 0
+        for plate in Order.plate:
+            
+    }
+}
+
+let order1 = new Order()
+tables 
+plates
+weitr
+chiefs
+bill

@@ -1,11 +1,20 @@
-const packingList = ["bowls", "plates", "pots", "pans", "eating utensils", "glasses", "cups", "cooking utensils"];
 
-console.log("Kitchen stuff to pack");
-// for(let i = 0; i < packingList.length; i++){
-//     console.log(packingList[i]);
-// }
-let i = 0
-while (i < packingList.length) {
-    console.log(packingList[i]);
-    i++;
+class BST {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
+  }
 }
+
+const root = new BST(10);
+root.left = new BST(5);
+root.left.left = new BST(2);
+root.left.left.left = new BST(1);
+root.left.right = new BST(5);
+root.right = new BST(15);
+root.right.left = new BST(13);
+root.right.left.right = new BST(14);
+root.right.right = new BST(22);
+
+const actual = program.findClosestValueInBst(root, 12);

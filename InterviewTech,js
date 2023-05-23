@@ -1,0 +1,70 @@
+/*
+ * Class Node, represents a Billing Event
+ */
+public class Node {
+    public List<Node> children;
+    public Boolean isCharge;
+    public String name;
+}
+
+/*
+ * Class Link, associates a Discount with its nearest Charge
+ */
+public class Link {
+    public Node discount;
+    public Node charge;
+}
+
+
+public class LinkService {
+    public static void printLinks(Node root) {
+        for (Link aLink : getLinks(root)) {
+            /*
+             * Prints the Link lines as in prior examples, e.g.:
+             *
+             * Link B->A
+             * Link C->A
+             * Link D->A
+             * 
+             * -- given --
+            Charge A
+            |---Charge B
+            |   |---Discount C
+            |   |---Discount D
+            |    
+            |---Discount E
+             */
+
+            A->[B, E] B-> [C, D]
+
+            System.out.println("Link " + aLink.discount.name + " -> " + aLink.charge.name);
+        }
+    }
+    ROOT=A
+    child=E
+    private static List<Link> getLinks(Node root) {
+        // fill this method
+        // you can assume the entire tree structure is already loaded into memory
+        // you can create any other methods or class attributes etc. that you deem necessary as well
+        
+        let listLink = []
+
+        for child in root.children:{
+
+            if(child.isCharge){
+                listLink.append(getLinks(child))
+            }else if (root.isCharge and !child.isCharge){
+                let newLink = new link()
+                newLink.discount = child;
+                newLink.charge = root;
+                
+                listLink.append(newLink)
+            }
+
+
+        }[C-B,D,B]
+
+            return listLink
+    }
+}
+c-b, d-b, e-A
